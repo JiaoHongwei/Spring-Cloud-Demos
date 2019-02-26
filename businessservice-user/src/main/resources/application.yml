@@ -1,0 +1,23 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: businessservice-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/spring_cloud_demo_user?serverTimezone=UTC&useSSL=false&characterEncoding=utf-8
+  jpa:
+
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: com.hw.businessserviceuser.mysql.MySQLDialectUTF8
+      hibernate.format_sql: false
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
