@@ -1,8 +1,8 @@
 server:
-  port: 8090
+  port: 8091
 spring:
   application:
-    name: businessservice-user-client-ribbon
+    name: businessservice-user-client-feign
 eureka:
   client:
     service-url:

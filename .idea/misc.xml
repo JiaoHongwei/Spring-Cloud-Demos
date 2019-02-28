@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/commonservice-eureka-client/pom.xml" />
         <option value="$PROJECT_DIR$/businessservice-user/pom.xml" />
         <option value="$PROJECT_DIR$/bussnessservice-user-client-ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/businessservice-user-client-feign/pom.xml" />
       </list>
     </option>
   </component>

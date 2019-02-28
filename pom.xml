@@ -24,6 +24,7 @@
         <module>commonservice-eureka-client</module>
         <module>businessservice-user</module>
         <module>businessservice-user-client-ribbon</module>
+        <module>businessservice-user-client-feign</module>
     </modules>
 
     <!-- 在properties中统一控制依赖包的版本，更清晰-->
@@ -52,5 +53,20 @@
 
     </dependencyManagement>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

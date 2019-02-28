@@ -14,8 +14,14 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 public class UserManagementRibbonClient {
-    @Autowired
+
+    private final
     RestTemplate restTemplate;
+
+    @Autowired
+    public UserManagementRibbonClient(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     @RequestMapping("client")
     public String getInfo(@RequestParam String name) {

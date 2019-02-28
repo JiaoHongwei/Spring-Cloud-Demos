@@ -6,8 +6,8 @@
         <groupId>com.hw</groupId>
         <artifactId>spring-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>jar</packaging>
     <artifactId>commonservice-eureka-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>commonservice-eureka-client</name>

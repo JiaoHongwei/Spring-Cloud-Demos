@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/businessservice-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/businessservice-user-client-feign" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/businessservice-user-client-ribbon" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commonservice-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/commonservice-eureka-client" charset="UTF-8" />

@@ -7,11 +7,11 @@
         <artifactId>spring-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <packaging>jar</packaging>
-    <artifactId>commonservice-eureka</artifactId>
+
+    <artifactId>businessservice-user-client-feign</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>commonservice-eureka</name>
-    <description>rureka 注册中心</description>
+    <name>businessservice-user-client-feign</name>
+    <description>用户中心 调用者 feign</description>
 
     <properties>
     </properties>
@@ -21,7 +21,16 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -52,6 +61,5 @@
             <url>https://repo.spring.io/milestone</url>
         </repository>
     </repositories>
-
 
 </project>
