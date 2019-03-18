@@ -1,5 +1,6 @@
 package com.hw.businessserviceuserclientribbon.client;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +25,13 @@ public class UserManagementRibbonClient {
     }
 
     @RequestMapping("client")
+    @HystrixCommand(fallbackMethod = "hiError")
     public String getInfo(@RequestParam String name) {
         return this.restTemplate.getForObject("http://businessservice-user/api/hi?name=" + name, String.class);
     }
+
+    public String hiError(String name) {
+        return "hi," + name + ",sorry,error!";
+    }
+
 }
