@@ -7,7 +7,6 @@
         <artifactId>spring-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <packaging>jar</packaging>
     <artifactId>businessservice-user-client-ribbon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>businessservice-user-client-ribbon</name>
