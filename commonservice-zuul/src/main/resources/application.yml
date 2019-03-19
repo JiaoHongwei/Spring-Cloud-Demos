@@ -13,18 +13,18 @@ zuul:
   ignoredServices: '*'
   routes:
     api-feign:
-#      http://localhost:8081/api/v1/feign/hi?name=jhw
+      #      http://localhost:8081/api/v1/feign/hi?name=jhw
       path: /feign/**
       serviceId: businessservice-user-client-feign
     api-ribbon:
-#      http://localhost:8081/api/v1/ribbon/client?name=jhw
+      #      http://localhost:8081/api/v1/ribbon/client?name=jhw
       path: /ribbon/**
       serviceId: businessservice-user-client-ribbon
     api-user:
-#      http://localhost:8081/api/v1/user/user/hi?name=jhw
+      #      http://localhost:8081/api/v1/user/user/hi?name=jhw
       path: /user/**
       serviceId: businessservice-user
     api-github:
-#      http://localhost:8081/api/v1/github/JiaoHongwei
+      #      http://localhost:8081/api/v1/github/JiaoHongwei
       path: /github/**
       url: https://github.com/
