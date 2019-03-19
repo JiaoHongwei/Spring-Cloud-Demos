@@ -28,3 +28,7 @@ zuul:
       #      http://localhost:8081/api/v1/github/JiaoHongwei
       path: /github/**
       url: https://github.com/
+logging:
+  level:
+    root: info
+    org.springframework.cloud.sleuth: debug

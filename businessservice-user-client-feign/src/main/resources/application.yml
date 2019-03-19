@@ -12,3 +12,7 @@ feign:
   hystrix:
     # 打开断路器功能
     enabled: true
+logging:
+  level:
+    root: info
+    org.springframework.cloud.sleuth: debug
