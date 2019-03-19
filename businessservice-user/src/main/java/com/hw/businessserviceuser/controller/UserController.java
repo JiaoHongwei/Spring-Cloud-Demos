@@ -19,7 +19,7 @@ import java.util.Random;
  * @Version 1.0
  */
 @RestController
-@RequestMapping("api")
+@RequestMapping("user")
 public class UserController {
 
     @Autowired
@@ -56,7 +56,7 @@ public class UserController {
     @Value("${server.port}")
     String port;
 
-    @RequestMapping("/hi")
+    @RequestMapping("hi")
     public String home(@RequestParam String name) {
         return "hi " + name + ",i am from port:" + port;
     }

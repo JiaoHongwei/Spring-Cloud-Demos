@@ -27,7 +27,7 @@ public class UserManagementRibbonClient {
     @RequestMapping("client")
     @HystrixCommand(fallbackMethod = "hiError")
     public String getInfo(@RequestParam String name) {
-        return this.restTemplate.getForObject("http://businessservice-user/api/hi?name=" + name, String.class);
+        return this.restTemplate.getForObject("http://businessservice-user/user/hi?name=" + name, String.class);
     }
 
     public String hiError(String name) {

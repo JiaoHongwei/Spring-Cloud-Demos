@@ -15,6 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "businessservice-user", fallback = UserManagementFeignClientHystrixImpl.class)
 public interface UserManagementFeignClient {
 
-    @RequestMapping("/api/hi")
+    @RequestMapping("/user/hi")
     String getInfo(@RequestParam(value = "name") String name);
 }

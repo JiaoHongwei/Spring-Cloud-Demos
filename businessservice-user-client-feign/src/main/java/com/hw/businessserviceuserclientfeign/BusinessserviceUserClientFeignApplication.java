@@ -27,7 +27,7 @@ public class BusinessserviceUserClientFeignApplication {
     @Autowired
     private UserManagementFeignClient userManagementFeignClient;
 
-    @RequestMapping("feign")
+    @RequestMapping("hi")
     public String getClient(@RequestParam String name) {
         return userManagementFeignClient.getInfo(name);
     }

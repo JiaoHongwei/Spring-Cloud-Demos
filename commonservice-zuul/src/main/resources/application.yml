@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: commonservice-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+  # 使用 prefix 添加前缀  访问：http://localhost:8080/api/user/login 自动转成 http://localhost:8080/user/login
+  prefix: /api/v1
+  ignoredServices: '*'
+  routes:
+    api-feign:
+#      http://localhost:8081/api/v1/feign/hi?name=jhw
+      path: /feign/**
+      serviceId: businessservice-user-client-feign
+    api-ribbon:
+#      http://localhost:8081/api/v1/ribbon/client?name=jhw
+      path: /ribbon/**
+      serviceId: businessservice-user-client-ribbon
+    api-user:
+#      http://localhost:8081/api/v1/user/user/hi?name=jhw
+      path: /user/**
+      serviceId: businessservice-user
+    api-github:
+#      http://localhost:8081/api/v1/github/JiaoHongwei
+      path: /github/**
+      url: https://github.com/
