@@ -56,7 +56,7 @@ public class ZuulAccessFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
-        String token = request.getParameter("token");
+        String token = request.getHeader("token");
         if (token == null) {
             log.warn("token is empty!");
             ctx.setSendZuulResponse(false);
@@ -68,7 +68,7 @@ public class ZuulAccessFilter extends ZuulFilter {
             }
             return null;
         }
-        log.info("Token verification success");
+        log.info(String.format("Token verification success >>> %s", token));
         return null;
     }
 }
