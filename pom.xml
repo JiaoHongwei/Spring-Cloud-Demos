@@ -26,6 +26,8 @@
         <module>businessservice-user-client-ribbon</module>
         <module>businessservice-user-client-feign</module>
         <module>commonservice-zuul</module>
+        <module>commonservice-config-server</module>
+        <module>commonservice-config-client</module>
     </modules>
 
     <!-- 在properties中统一控制依赖包的版本，更清晰-->
