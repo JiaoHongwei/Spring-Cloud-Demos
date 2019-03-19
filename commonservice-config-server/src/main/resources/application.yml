@@ -8,8 +8,7 @@ spring:
       server:
         git:
           uri: https://github.com/JiaoHongwei/Spring-Cloud-Config.git
-          username:
-          passphrase:
+          search-paths: user
       label: master
 
 eureka:
