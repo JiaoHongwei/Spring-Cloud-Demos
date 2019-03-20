@@ -2,12 +2,16 @@ package com.hw.commonservicegateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
+
+import java.util.Objects;
+
 @RestController
 @SpringBootApplication
 public class CommonserviceGatewayApplication {
@@ -40,4 +44,10 @@ public class CommonserviceGatewayApplication {
     public Mono<String> fallback() {
         return Mono.just("fallback");
     }
+
+    @Bean
+    KeyResolver userKeyResolver() {
+        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst("user")));
+    }
+
 }
