@@ -20,7 +20,7 @@
     </parent>
 
     <modules>
-        <module>commonservice-eureka</module>
+        <module>commonservice-eureka-server</module>
         <module>commonservice-eureka-client</module>
         <module>businessservice-user</module>
         <module>businessservice-user-client-ribbon</module>
