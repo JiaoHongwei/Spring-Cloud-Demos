@@ -12,3 +12,24 @@ logging:
     root: info
     org.springframework.web.servlet.DspatcherServlet: debug
     org.springframework.cloud.sleuth: debug
+
+
+#    Hystrix Dashboard 配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+#  断路器聚合监控(Hystrix Turbine) 配置
+turbine:
+  app-config: service-hi,service-lucy
+  aggregator:
+    clusterConfig: default
+  clusterNameExpression: new String("default")
+  combine-host: true
+  instanceUrlSuffix:
+    default: actuator/hystrix.stream
