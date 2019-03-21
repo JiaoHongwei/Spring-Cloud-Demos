@@ -12,21 +12,34 @@ spring:
 
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
       routes:
-      - id: limit_route
-        uri: http://httpbin.org:80/get
+      # This route rule used to forward request to activity server
+      - id: api-feign
+        #  uri以lb://开头（lb代表从注册中心获取服务），后面接的就是你需要转发到的服务名称，
+        #  这个服务名称必须跟eureka中的对应，否则会找不到服务,
+        uri: lb://businessservice-user-client-feign
         predicates:
-        - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+        - Path=/feign/**
         filters:
-        - name: RequestRateLimiter
-          args:
-            # key-resolver，用于限流的键的解析器的 Bean 对象的名字。
-            # 它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
-            key-resolver: '#{@hostAddrKeyResolver}'
-            # 令牌桶总容量。
-            redis-rate-limiter.replenishRate: 1
-            # 令牌桶每秒填充平均速率。
-            redis-rate-limiter.burstCapacity: 3
+        - StripPrefix=1
+#      - id: limit_route
+#        uri: http://httpbin.org:80/get
+#        predicates:
+#        - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+#        filters:
+#        - name: RequestRateLimiter
+#          args:
+#            # key-resolver，用于限流的键的解析器的 Bean 对象的名字。
+#            # 它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
+#            key-resolver: '#{@uriKeyResolver}'
+#            # 令牌桶总容量。
+#            redis-rate-limiter.replenishRate: 1
+#            # 令牌桶每秒填充平均速率。
+#            redis-rate-limiter.burstCapacity: 3
 
 eureka:
   client:
